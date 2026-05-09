@@ -1,0 +1,24 @@
+main:
+  - title: Home
+    url: /
+
+  - title: Breast Cancer
+    url: /Breast-Cancer/
+
+  - title: Lymphoma
+    url: /Lymphoma/
+
+  - title: Lung Cancer
+    url: /Lung-Cancer/
+
+  - title: GI Cancer
+    url: /GI-Cancer/
+
+  - title: Trial Summaries
+    url: /Trial-Summaries/
+
+  - title: Exam Notes
+    url: /Exam-Notes/
+
+  - title: General Oncology
+    url: /General-Oncology/
