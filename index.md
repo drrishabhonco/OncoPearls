@@ -1,24 +1,27 @@
 ---
-title: OncoPearls
-description: High-yield oncology pearls & resources by Dr. Rishabh Jain
+title: Home
 layout: home
 ---
 
 # OncoPearls
 
-**High-yield oncology education**  
-by **Dr. Rishabh Jain** (@drrishabhonco)  
-Medical Oncologist | AIIMS Delhi
+**High-yield oncology education & resources**  
+by **Dr. Rishabh Jain**  
+Medical Oncologist | AIIMS Delhi | @drrishabhonco
 
 ---
 
-### Welcome to the Library
+### Quick Access
 
 - [Breast Cancer](./Breast-Cancer)
 - [Lymphoma](./Lymphoma)
+- [Lung Cancer](./Lung-Cancer)
+- [GI Cancer](./GI-Cancer)
 - [Trial Summaries](./Trial-Summaries)
 - [Exam Notes](./Exam-Notes)
 
-**Last Updated**: May 2026
+---
 
-Made for residents, DM students & practicing oncologists.
+**Purpose**: Helping residents, DM students, and practicing oncologists stay updated with practical, high-yield content.
+
+Last Updated: May 2026
