@@ -3,7 +3,6 @@ description: High-yield oncology pearls & resources by Dr. Rishabh Jain (@drrish
 
 remote_theme: just-the-docs/just-the-docs
 
-# Required for remote theme to work
 plugins:
   - jekyll-remote-theme
 
