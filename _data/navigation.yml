@@ -1,48 +1,33 @@
 main:
   - title: Home
     url: /
-
-  - title: Breast Cancer
-    url: /Breast-Cancer/
-
-  - title: Lung Cancer
-    url: /Lung-Cancer/
-
-  - title: GI Cancers
-    url: /GI-Cancer/
-
-  - title: Genitourinary Cancers
-    url: /Genitourinary-Cancers/
-
-  - title: Gynecological Cancers
-    url: /Gynecological-Cancers/
-
-  - title: Lymphoma & Hematological
-    url: /Lymphoma/
-
-  - title: Head & Neck Cancer
-    url: /Head-Neck-Cancer/
-
-  - title: Melanoma & Skin Cancer
-    url: /Melanoma-Skin-Cancer/
-
-  - title: Sarcoma & Bone Tumors
-    url: /Sarcoma/
-
-  - title: CNS Tumors
-    url: /CNS-Tumors/
-
   - title: Conferences
     url: /Conferences/
-
-  - title: Immunotherapy & Targeted Therapy
-    url: /Immunotherapy-Targeted/
-
+  - title: Breast Cancer
+    url: /Breast-Cancer/
+  - title: CNS Tumors
+    url: /CNS-Tumors/
   - title: Exam Notes
     url: /Exam-Notes/
-
-  - title: Supportive Care
-    url: /Supportive-Care/
-
   - title: General Oncology
     url: /General-Oncology/
+  - title: Genitourinary Cancers
+    url: /Genitourinary-Cancers/
+  - title: GI Cancers
+    url: /GI-Cancers/
+  - title: Gynecological Cancers
+    url: /Gynecological-Cancers/
+  - title: Head & Neck Cancer
+    url: /Head-Neck-Cancer/
+  - title: Immunotherapy & Targeted Therapy
+    url: /Immunotherapy-Targeted-Therapy/
+  - title: Lung Cancer
+    url: /Lung-Cancer/
+  - title: Lymphoma & Hematological
+    url: /Lymphoma-Hematological/
+  - title: Melanoma & Skin Cancer
+    url: /Melanoma-Skin-Cancer/
+  - title: Sarcoma & Bone Tumors
+    url: /Sarcoma-Bone-Tumors/
+  - title: Supportive Care
+    url: /Supportive-Care/
