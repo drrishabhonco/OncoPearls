@@ -15,9 +15,9 @@ Medical Oncologist | AIIMS Delhi | @drrishabhonco
 
 - [Breast Cancer](./Breast-Cancer)
 - [Conferences](./Conferences)
-- [Lymphoma](./Lymphoma)
 - [Lung Cancer](./Lung-Cancer)
 - [GI Cancers](./GI-Cancer)
+- [Lymphoma & Hematological](./Lymphoma)
 
 ---
 

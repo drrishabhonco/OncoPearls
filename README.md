@@ -1,9 +1,5 @@
----
-title: OncoPearls
----
+OncoPearls
 
-# OncoPearls
+High-yield oncology resources by Dr. Rishabh Jain (@drrishabhonco)
 
-High-yield oncology pearls, trial summaries & resources by Dr. Rishabh Jain (@drrishabhonco)
-
-Visit the live site: [https://drrishabhonco.github.io/OncoPearls](https://drrishabhonco.github.io/OncoPearls)
+Visit the live site: https://drrishabhonco.github.io/OncoPearls
