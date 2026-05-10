@@ -14,11 +14,9 @@ Medical Oncologist | AIIMS Delhi | @drrishabhonco
 ### Quick Access
 
 - [Breast Cancer](./Breast-Cancer)
-- [Lymphoma](./Lymphoma)
-- [Lung Cancer](./Lung-Cancer)
-- [GI Cancer](./GI-Cancer)
-- [Trial Summaries](./Trial-Summaries)
+- [Conferences](./Conferences)
 - [Exam Notes](./Exam-Notes)
+- [General Oncology](./General-Oncology)
 
 ---
 

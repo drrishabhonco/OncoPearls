@@ -15,8 +15,10 @@ Medical Oncologist | AIIMS Delhi | @drrishabhonco
 
 - [Breast Cancer](./Breast-Cancer)
 - [Conferences](./Conferences)
-- [Lung Cancer](./Lung-Cancer)
-- [GI Cancers](./GI-Cancer)
+- [Exam Notes](./Exam-Notes)
+- [General Oncology](./General-Oncology)
+
+---
 
 **Purpose**: Helping residents, DM students, and practicing oncologists stay updated with practical, high-yield content.
 
