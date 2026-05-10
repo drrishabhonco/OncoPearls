@@ -1,5 +1,5 @@
 title: OncoPearls
-description: High-yield oncology pearls & trial summaries by Dr. Rishabh Jain (@drrishabhonco)
+description: High-yield oncology pearls, trial summaries & resources by Dr. Rishabh Jain (@drrishabhonco)
 
 remote_theme: just-the-docs/just-the-docs
 
@@ -11,4 +11,4 @@ aux_links:
   "Follow on X": "https://x.com/drrishabhonco"
   "GitHub Repo": "https://github.com/drrishabhonco/OncoPearls"
 
-footer_content: "Made with ❤️ for oncology residents & DM students"
+footer_content: "Made with ❤️ for oncology residents & DM students | Last Updated: May 2026"

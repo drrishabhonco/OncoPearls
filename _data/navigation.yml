@@ -23,11 +23,11 @@ main:
     url: /Immunotherapy-Targeted-Therapy/
   - title: Lung Cancer
     url: /Lung-Cancer/
-  - title: Lymphoma & Hematological
+  - title: Lymphoma & Hematological Malignancies
     url: /Lymphoma-Hematological/
   - title: Melanoma & Skin Cancer
     url: /Melanoma-Skin-Cancer/
   - title: Sarcoma & Bone Tumors
     url: /Sarcoma-Bone-Tumors/
-  - title: Supportive Care
-    url: /Supportive-Care/
+  - title: Supportive Care & Palliative
+    url: /Supportive-Care-Palliative/
