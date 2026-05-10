@@ -5,20 +5,44 @@ main:
   - title: Breast Cancer
     url: /Breast-Cancer/
 
-  - title: Lymphoma
-    url: /Lymphoma/
-
   - title: Lung Cancer
     url: /Lung-Cancer/
 
-  - title: GI Cancer
+  - title: GI Cancers
     url: /GI-Cancer/
 
-  - title: Trial Summaries
-    url: /Trial-Summaries/
+  - title: Genitourinary Cancers
+    url: /Genitourinary-Cancers/
+
+  - title: Gynecological Cancers
+    url: /Gynecological-Cancers/
+
+  - title: Lymphoma & Hematological
+    url: /Lymphoma/
+
+  - title: Head & Neck Cancer
+    url: /Head-Neck-Cancer/
+
+  - title: Melanoma & Skin Cancer
+    url: /Melanoma-Skin-Cancer/
+
+  - title: Sarcoma & Bone Tumors
+    url: /Sarcoma/
+
+  - title: CNS Tumors
+    url: /CNS-Tumors/
+
+  - title: Conferences
+    url: /Conferences/
+
+  - title: Immunotherapy & Targeted Therapy
+    url: /Immunotherapy-Targeted/
 
   - title: Exam Notes
     url: /Exam-Notes/
+
+  - title: Supportive Care
+    url: /Supportive-Care/
 
   - title: General Oncology
     url: /General-Oncology/
