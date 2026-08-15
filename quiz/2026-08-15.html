@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Daily Med Onco Quiz | 15 Aug 2026 | OncoPearls</title>
+  <meta name="description" content="Interactive 5-question high-yield Medical Oncology quiz by Dr. Rishabh Jain. Perfect for residents & practicing oncologists.">
+  <meta name="theme-color" content="#0f766e">
+  <!-- Open Graph for X sharing -->
+  <meta property="og:title" content="Daily Med Onco Quiz – 15 Aug 2026">
+  <meta property="og:description" content="5 high-yield interactive questions. Test yourself & share your score!">
+  <meta property="og:type" content="website">
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #0d5f58;
+      --accent: #14b8a6;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --correct: #059669;
+      --wrong: #dc2626;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 16px;
+    }
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      padding-top: 8px;
+    }
+    .badge {
+      display: inline-block;
+      background: #ccfbf1;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .progress-wrap {
+      background: var(--border);
+      border-radius: 999px;
+      height: 8px;
+      margin: 20px 0 8px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 999px;
+      transition: width 0.35s ease;
+      width: 0%;
+    }
+    .progress-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: right;
+      margin-bottom: 16px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+    }
+    .question-num {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .question-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fff;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .option:hover:not(.disabled) {
+      border-color: var(--accent);
+      background: #f0fdfa;
+    }
+    .option.selected {
+      border-color: var(--primary);
+      background: #ccfbf1;
+    }
+    .option.correct {
+      border-color: var(--correct);
+      background: #d1fae5;
+    }
+    .option.wrong {
+      border-color: var(--wrong);
+      background: #fee2e2;
+    }
+    .option.disabled {
+      cursor: default;
+      opacity: 0.85;
+    }
+    .option-letter {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .option.selected .option-letter,
+    .option.correct .option-letter {
+      background: var(--primary);
+      color: white;
+    }
+    .option.wrong .option-letter {
+      background: var(--wrong);
+      color: white;
+    }
+    .feedback {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .feedback.show {
+      display: block;
+    }
+    .feedback.correct {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .feedback.wrong {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 20px;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    .btn-primary:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+    }
+    .btn-secondary {
+      background: #f1f5f9;
+      color: var(--text);
+      margin-top: 10px;
+    }
+    .results {
+      text-align: center;
+      display: none;
+    }
+    .results.show {
+      display: block;
+    }
+    .score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-weight: 700;
+    }
+    .score-circle .num {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+    .score-circle .label {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+    .score-msg {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .score-detail {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .share-box {
+      background: #f0fdfa;
+      border: 1px dashed var(--accent);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 16px;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    .share-box code {
+      display: block;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      word-break: break-all;
+      border: 1px solid var(--border);
+    }
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">DAILY QUIZ • 15 AUG 2026</div>
+      <h1>Med Onco Challenge</h1>
+      <p class="subtitle">5 high-yield questions • Interactive</p>
+    </header>
+
+    <div id="quiz-area">
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress"></div>
+      </div>
+      <div class="progress-text" id="progress-text">Question 1 of 5</div>
+
+      <div class="card" id="question-card">
+        <div class="question-num" id="q-num">Question 1</div>
+        <div class="question-text" id="q-text"></div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback"></div>
+        <button class="btn btn-primary" id="next-btn" disabled>Next Question →</button>
+      </div>
+    </div>
+
+    <div class="card results" id="results">
+      <div class="score-circle">
+        <span class="num" id="final-score">0</span>
+        <span class="label">/ 5</span>
+      </div>
+      <div class="score-msg" id="score-msg">Nice try!</div>
+      <div class="score-detail" id="score-detail"></div>
+      
+      <button class="btn btn-primary" id="restart-btn">Try Again</button>
+      
+      <div class="share-box">
+        <strong>Share your score on X:</strong>
+        <code id="share-text"></code>
+        <button class="btn btn-secondary" onclick="copyShare()">Copy text to post on X</button>
+      </div>
+    </div>
+
+    <footer>
+      Made for #OncoTwitter by <a href="https://x.com/drrishabhonco" target="_blank">@drrishabhonco</a><br>
+      <a href="https://drrishabhonco.github.io/OncoPearls/" target="_blank">OncoPearls</a> • Keep oncology interesting
+    </footer>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        q: "In the first-line treatment of metastatic HR+/HER2– breast cancer, which combination showed the greatest absolute OS benefit in the most mature data?",
+        options: [
+          "Ribociclib + AI",
+          "Palbociclib + AI",
+          "Abemaciclib + AI",
+          "Ribociclib + fulvestrant"
+        ],
+        correct: 0,
+        explanation: "MONALEESA-2 mature OS data showed the largest absolute overall survival benefit among the three CDK4/6 inhibitor + AI trials."
+      },
+      {
+        q: "A 58-year-old never-smoker with metastatic NSCLC (adenocarcinoma) has a confirmed EGFR exon 20 insertion. Preferred first-line targeted option is:",
+        options: [
+          "Osimertinib",
+          "Amivantamab + chemotherapy",
+          "Mobocertinib",
+          "Afatinib"
+        ],
+        correct: 1,
+        explanation: "Amivantamab + chemotherapy is the preferred first-line regimen for EGFR exon 20 insertion mutations per current guidelines."
+      },
+      {
+        q: "In MSI-high metastatic colorectal cancer, which statement is correct regarding first-line therapy?",
+        options: [
+          "Pembrolizumab is preferred over chemotherapy regardless of patient fitness",
+          "Nivolumab + ipilimumab is the only approved doublet",
+          "Chemotherapy remains preferred if patient is BRAF V600E mutated",
+          "Anti-EGFR agents retain significant activity even in MSI-high disease"
+        ],
+        correct: 0,
+        explanation: "KEYNOTE-177 established pembrolizumab as preferred first-line therapy for MSI-H metastatic colorectal cancer."
+      },
+      {
+        q: "Which of the following is the strongest predictor of benefit from adjuvant olaparib in BRCA-mutated high-risk early breast cancer (OlympiA)?",
+        options: [
+          "Triple-negative subtype",
+          "Residual disease after neoadjuvant chemotherapy",
+          "Germline BRCA1 vs BRCA2 mutation",
+          "Concurrent use of pembrolizumab"
+        ],
+        correct: 1,
+        explanation: "OlympiA benefit was driven primarily by patients with residual disease / high-risk features after neoadjuvant therapy."
+      },
+      {
+        q: "A patient develops grade 3 immune-related colitis on pembrolizumab. After holding the drug and starting steroids, the next most important step is:",
+        options: [
+          "Immediate permanent discontinuation of all checkpoint inhibitors",
+          "Early GI consultation ± endoscopy if no rapid improvement",
+          "Empiric antibiotics for 7 days",
+          "Switch to ipilimumab"
+        ],
+        correct: 1,
+        explanation: "Early specialist input and endoscopy are recommended if steroids do not produce rapid improvement in grade ≥3 colitis."
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+    let answered = false;
+
+    const qNum = document.getElementById('q-num');
+    const qText = document.getElementById('q-text');
+    const optionsEl = document.getElementById('options');
+    const feedback = document.getElementById('feedback');
+    const nextBtn = document.getElementById('next-btn');
+    const progress = document.getElementById('progress');
+    const progressText = document.getElementById('progress-text');
+    const quizArea = document.getElementById('quiz-area');
+    const results = document.getElementById('results');
+
+    function loadQuestion() {
+      answered = false;
+      const q = questions[current];
+      qNum.textContent = `Question ${current + 1}`;
+      qText.textContent = q.q;
+      optionsEl.innerHTML = '';
+      feedback.className = 'feedback';
+      feedback.textContent = '';
+      nextBtn.disabled = true;
+      nextBtn.textContent = current === questions.length - 1 ? 'See Results →' : 'Next Question →';
+
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'option';
+        btn.innerHTML = `<span class="option-letter">${String.fromCharCode(65 + i)}</span><span>${opt}</span>`;
+        btn.onclick = () => selectOption(i, btn);
+        optionsEl.appendChild(btn);
+      });
+
+      const pct = (current / questions.length) * 100;
+      progress.style.width = pct + '%';
+      progressText.textContent = `Question ${current + 1} of ${questions.length}`;
+    }
+
+    function selectOption(index, btn) {
+      if (answered) return;
+      answered = true;
+      const q = questions[current];
+      const allOptions = optionsEl.querySelectorAll('.option');
+
+      allOptions.forEach(o => o.classList.add('disabled'));
+
+      if (index === q.correct) {
+        score++;
+        btn.classList.add('correct', 'selected');
+        feedback.className = 'feedback show correct';
+        feedback.innerHTML = `<strong>✓ Correct!</strong><br>${q.explanation}`;
+      } else {
+        btn.classList.add('wrong', 'selected');
+        allOptions[q.correct].classList.add('correct');
+        feedback.className = 'feedback show wrong';
+        feedback.innerHTML = `<strong>✗ Incorrect.</strong><br>${q.explanation}`;
+      }
+      nextBtn.disabled = false;
+    }
+
+    nextBtn.onclick = () => {
+      current++;
+      if (current < questions.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    };
+
+    function showResults() {
+      quizArea.classList.add('hidden');
+      results.classList.add('show');
+      document.getElementById('final-score').textContent = score;
+      
+      let msg = '';
+      if (score === 5) msg = 'Outstanding! 🔥';
+      else if (score >= 4) msg = 'Excellent work!';
+      else if (score >= 3) msg = 'Solid knowledge!';
+      else if (score >= 2) msg = 'Good effort – keep learning!';
+      else msg = 'Review the pearls and try again!';
+      
+      document.getElementById('score-msg').textContent = msg;
+      document.getElementById('score-detail').textContent = `You got ${score} out of 5 correct.`;
+
+      const share = `I scored ${score}/5 on today's Med Onco Quiz by @drrishabhonco 🩺\n\nDaily high-yield oncology challenge → https://drrishabhonco.github.io/OncoPearls/quiz/2026-08-15.html\n\n#OncoTwitter #MedEd`;
+      document.getElementById('share-text').textContent = share;
+      
+      progress.style.width = '100%';
+    }
+
+    document.getElementById('restart-btn').onclick = () => {
+      current = 0;
+      score = 0;
+      results.classList.remove('show');
+      quizArea.classList.remove('hidden');
+      loadQuestion();
+    };
+
+    function copyShare() {
+      const text = document.getElementById('share-text').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Copied! Paste it into a new post on X.');
+      });
+    }
+
+    // Start
+    loadQuestion();
+  </script>
+</body>
+</html>
